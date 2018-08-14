@@ -27,7 +27,8 @@ let config = {
     ],
     resolve:{
         extensions:[".jsx",".js"]
-    }
+    },
+    performance: { hints: false }
 };
 
 module.exports = config;

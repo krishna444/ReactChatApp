@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import theme from './assets/react-toolbox/theme';
-import './assets/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { App } from "./components/App";
-import ThemeProvider from 'react-toolbox/lib/ThemeProvider';
+import { Button, Tooltip } from 'reactstrap';
+
 import registerServiceWorker from './registerServiceWorker';
-
-const themeProvider = (<ThemeProvider theme={theme}>
-    <App />
-</ThemeProvider>
-);
-
-
-const Index = () => { return <div> Test</div> }
+const Index = () => { return <div id="tt"><Tooltip target="tt"> Test</Tooltip></div> }
 
 ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Index />, document.getElementById("test"));
+ReactDOM.render(<Button color="danger">Danger</Button>, document.getElementById("test1"));
 
 registerServiceWorker();

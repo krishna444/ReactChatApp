@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const wsRouter = require("./routers/ws-router");
+const wsRouter = require("./routes/ws-router");
 const app = express();
 
 app.use(express.static(path.join(__dirname + "/../", 'dist')));
