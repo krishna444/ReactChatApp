@@ -18,6 +18,8 @@ class App extends Component {
             console.log(data);
             this.setState({value:data});
         });
+
+      socket.on('server time',data=>{console.log("date"+data)});
     }
     render() {
         return (

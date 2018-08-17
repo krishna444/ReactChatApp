@@ -26,7 +26,7 @@ io.on('connection', socket => {
     console.log(message);
   });
 
-  socket.on('message',msg=>{console.log(msg)});
+  socket.on('message', msg => { console.log(msg) });
 });
 
 
@@ -35,4 +35,7 @@ setInterval(() => {
   var stockPrice = Math.floor(Math.random() * 1000);
   console.log(stockPrice);
   io.emit('stock price update', stockPrice);
-}, 1);
+  let date = new Date();
+  console.log(date);
+  io.emit('server time', date);
+}, 1000);
