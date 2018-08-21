@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import io from 'socket.io-client';
 import '../static/App.css';
+import Counter from './Counter';
 
 class App extends Component {
     constructor(props){
@@ -15,16 +16,17 @@ class App extends Component {
             socket.emit('message',{name:"Hari"});          
         });
         socket.on('stock price update', data=>{
-            console.log(data);
+            //console.log(data);
             this.setState({value:data});
         });
 
-      socket.on('server time',data=>{console.log("date"+data)});
+      //socket.on('server time',data=>{console.log("date"+data)});
     }
     render() {
         return (
             <div className="container-fluid">
                 <h1><marquee>{this.state.value}</marquee></h1>
+                <Counter />
             </div>
         );
     }
