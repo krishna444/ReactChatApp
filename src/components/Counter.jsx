@@ -23,7 +23,7 @@ class Counter extends Component {
         let diff=currentMilliseconds-this.startCounterMilliseconds;
         console.log("diff="+diff);
        this.parseMilliseconds(diff);
-    },1000); 
+    },199); 
     console.log("created..."+this.refs.intervalId);
   }
 
@@ -31,7 +31,8 @@ class Counter extends Component {
     let hours=Math.trunc(milliSeconds/(1000*60*60));
     let minutes=Math.trunc((milliSeconds%(1000*60*60))/(1000*60));
     let seconds=Math.trunc((milliSeconds%(1000*60*60))%(1000*60)/1000);
-    let ms=Math.trunc((milliSeconds%(1000*60*60))%(1000*60)%1000);
+    let ms=Math.trunc(((milliSeconds%(1000*60*60))%(1000*60))%1000);
+    console.log("milliseconds:"+ms);
     //return {hours,minutes,seconds,milliSeconds};
     console.log("hours"+ hours+"minutes="+minutes+" seconds"+seconds+"ms="+ms);
     this.setState({countHours:hours,countMinutes:minutes,countSeconds:seconds,countMilliseconds:ms});
